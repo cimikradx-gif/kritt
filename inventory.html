@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>๐“ฆ เธเธฑเธ”เธเธฒเธฃเธชเธดเธเธเนเธฒ - ShopCute POS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/enhance.css"/>
+</head>
+<body>
+<div class="particles" id="particles"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">๐๏ธ</span>
+      <span class="logo-text">ShopCute <span class="logo-sub">POS</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">๐  เธซเธเนเธฒเธซเธฅเธฑเธ</a>
+      <a href="dashboard.html" class="nav-item">๐“ Dashboard</a>
+      <a href="inventory.html" class="nav-item active">๐“ฆ เธชเธดเธเธเนเธฒ</a>
+      <a href="pos.html" class="nav-item">๐’ เธ•เธฐเธเธฃเนเธฒ</a>
+      <a href="receipt.html" class="nav-item">๐งพ เนเธเน€เธชเธฃเนเธ</a>
+      <a href="report.html" class="nav-item">๐“ เธฃเธฒเธขเธเธฒเธ</a>
+      <a href="login.html" class="nav-item">๐”‘ เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ</a>
+    </nav>
+    <div class="topbar-right">
+      <div class="badge-wrap">
+        <span class="material-icons cart-icon">shopping_cart</span>
+        <span class="badge" id="cart-badge">0</span>
+      </div>
+      <div class="user-avatar">๐‘ฉโ€๐’ผ</div>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <h1>๐“ฆ เธเธฑเธ”เธเธฒเธฃเธชเธดเธเธเนเธฒเนเธฅเธฐเธชเธ•เนเธญเธ</h1>
+  <p>Inventory Control โ€” เธ”เธนเธชเธดเธเธเนเธฒ เธ•เธฑเนเธเธชเธ–เธฒเธเธฐ เนเธฅเธฐเธ•เธดเธ”เธ•เธฒเธกเธเธณเธเธงเธเธเธเน€เธซเธฅเธทเธญ</p>
+</div>
+
+<section class="products-section">
+
+  <!-- ALERT -->
+  <div class="alert-low">
+    โ ๏ธ <strong>เนเธเนเธเน€เธ•เธทเธญเธ:</strong> เธกเธตเธชเธดเธเธเนเธฒ 3 เธฃเธฒเธขเธเธฒเธฃเธ—เธตเนเธกเธตเธชเธ•เนเธญเธเธเนเธญเธขเธเธงเนเธฒ 5 เธเธดเนเธ โ€” เธเธฃเธธเธ“เธฒเน€เธ•เธดเธกเธชเธ•เนเธญเธเธ”เนเธงเธ!
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-cat="all">๐ เธ—เธฑเนเธเธซเธกเธ”</button>
+    <button class="filter-btn" data-cat="drink">๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</button>
+    <button class="filter-btn" data-cat="snack">๐ฐ เธเธเธก</button>
+    <button class="filter-btn" data-cat="fresh">๐ฅ— เธญเธฒเธซเธฒเธฃเธชเธ”</button>
+    <button class="filter-btn" data-cat="beauty">๐’ เธเธงเธฒเธกเธเธฒเธก</button>
+    <button class="filter-btn" data-cat="accessory">๐€ เน€เธเธฃเธทเนเธญเธเธเธฃเธฐเธ”เธฑเธ</button>
+    <button class="filter-btn" data-cat="stationery">โ๏ธ เน€เธเธฃเธทเนเธญเธเน€เธเธตเธขเธ</button>
+    <button class="filter-btn" data-cat="toy">๐งธ เธเธญเธเน€เธฅเนเธ</button>
+    <div class="search-box">
+      <span class="material-icons" style="color:#B87FD6;font-size:1.1rem">search</span>
+      <input type="text" id="search-input" placeholder="เธเนเธเธซเธฒเธชเธดเธเธเนเธฒ..."/>
+    </div>
+  </div>
+
+  <!-- PRODUCTS GRID -->
+  <div class="products-grid" id="products-grid">
+
+    <!-- ๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก -->
+    <div class="product-card" data-cat="drink">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="เธเธฒเนเธ—เธข" onerror="this.parentElement.innerHTML='๐ง'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธเธฒเนเธ—เธขเน€เธขเนเธ</div>
+        <div class="product-cat">๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ35</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 24</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>24/50</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="48" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart" title="เน€เธเธดเนเธกเนเธเธ•เธฐเธเธฃเนเธฒ">๐’</button>
+          <button class="icon-btn icon-btn-add" title="เน€เธเธดเนเธกเธชเธ•เนเธญเธ">โ•</button>
+          <button class="icon-btn icon-btn-del" title="เธฅเธเธชเธดเธเธเนเธฒ">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="drink">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80" alt="เธเธฒเนเธ" onerror="this.parentElement.innerHTML='โ•'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธเธฒเนเธเธฅเธฒเน€เธ•เนเน€เธขเนเธ</div>
+        <div class="product-cat">๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ45</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 18</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>18/40</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="45" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="drink">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1603394630026-6e9f0acfbdb5?w=400&q=80" alt="เธกเธฑเธ—เธเธฐ" onerror="this.parentElement.innerHTML='๐ต'"/>
+      </div>
+      <span class="product-badge low">โ ๏ธ เนเธเธฅเนเธซเธกเธ”</span>
+      <div class="product-body">
+        <div class="product-name">เธกเธฑเธ—เธเธฐเธฅเธฒเน€เธ•เน</div>
+        <div class="product-cat">๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ55</span>
+          <span style="font-size:.8rem;color:#FF9A5C">โ ๏ธ เธชเธ•เนเธญเธ: 3</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>3/30</span></div>
+          <div class="stock-bar"><div class="stock-fill low" data-pct="10" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="drink">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1546548970-71785318a17b?w=400&q=80" alt="เธเนเธณเธเธฅเนเธกเน" onerror="this.parentElement.innerHTML='๐น'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธเนเธณเธชเนเธกเธเธฑเนเธเธชเธ”</div>
+        <div class="product-cat">๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ40</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 15</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>15/30</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="50" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ๐ฐ เธเธเธก -->
+    <div class="product-card" data-cat="snack">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&q=80" alt="เน€เธเนเธ" onerror="this.parentElement.innerHTML='๐'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เน€เธเนเธเธชเธ•เธฃเธญเธงเนเน€เธเธญเธฃเนเธฃเธต</div>
+        <div class="product-cat">๐ฐ เธเธเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ120</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 8</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>8/20</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="40" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="snack">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1587349144988-b6e3ae1e45e2?w=400&q=80" alt="เธเธธเธเธเธตเน" onerror="this.parentElement.innerHTML='๐ช'"/>
+      </div>
+      <span class="product-badge low">โ ๏ธ เนเธเธฅเนเธซเธกเธ”</span>
+      <div class="product-body">
+        <div class="product-name">เธเธธเธเธเธตเนเธเนเธญเธเนเธเนเธฅเธ•เธเธดเธ</div>
+        <div class="product-cat">๐ฐ เธเธเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ25</span>
+          <span style="font-size:.8rem;color:#FF9A5C">โ ๏ธ เธชเธ•เนเธญเธ: 4</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>4/50</span></div>
+          <div class="stock-bar"><div class="stock-fill low" data-pct="8" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="snack">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=400&q=80" alt="เธกเธฒเธเธฒเธฃเธญเธ" onerror="this.parentElement.innerHTML='๐ง'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธกเธฒเธเธฒเธฃเธญเธเธซเธฅเธฒเธเธชเธต</div>
+        <div class="product-cat">๐ฐ เธเธเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ85</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 20</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>20/30</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="67" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ๐ฅ— เธญเธฒเธซเธฒเธฃเธชเธ” -->
+    <div class="product-card" data-cat="fresh">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80" alt="เธชเธฅเธฑเธ”" onerror="this.parentElement.innerHTML='๐ฅ—'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธชเธฅเธฑเธ”เธเธฑเธเธชเธ”</div>
+        <div class="product-cat">๐ฅ— เธญเธฒเธซเธฒเธฃเธชเธ”</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ65</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 12</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>12/20</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="60" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="fresh">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=80" alt="เธเนเธฒเธงเธเธฅเนเธญเธ" onerror="this.parentElement.innerHTML='๐ฑ'"/>
+      </div>
+      <span class="product-badge low">โ ๏ธ เนเธเธฅเนเธซเธกเธ”</span>
+      <div class="product-body">
+        <div class="product-name">เธเนเธฒเธงเธเธฅเนเธญเธเธชเธธเธเธ เธฒเธ</div>
+        <div class="product-cat">๐ฅ— เธญเธฒเธซเธฒเธฃเธชเธ”</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ89</span>
+          <span style="font-size:.8rem;color:#FF9A5C">โ ๏ธ เธชเธ•เนเธญเธ: 2</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>2/30</span></div>
+          <div class="stock-bar"><div class="stock-fill low" data-pct="7" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ๐’ เธเธงเธฒเธกเธเธฒเธก -->
+    <div class="product-card" data-cat="beauty">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&q=80" alt="เธเธฃเธตเธก" onerror="this.parentElement.innerHTML='๐’'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธเธฃเธตเธกเธเธณเธฃเธธเธเธเธดเธงเธซเธเนเธฒ</div>
+        <div class="product-cat">๐’ เธเธงเธฒเธกเธเธฒเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ350</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 15</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>15/25</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="60" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="beauty">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&q=80" alt="เธฅเธดเธเธชเธ•เธดเธ" onerror="this.parentElement.innerHTML='๐’'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธฅเธดเธเธชเธ•เธดเธเธเธกเธชเธ•เธฃเธญเธงเนเน€เธเธญเธฃเนเธฃเธต</div>
+        <div class="product-cat">๐’ เธเธงเธฒเธกเธเธฒเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ199</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 22</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>22/40</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="55" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ๐€ เน€เธเธฃเธทเนเธญเธเธเธฃเธฐเธ”เธฑเธ -->
+    <div class="product-card" data-cat="accessory">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="เธชเธฃเนเธญเธข" onerror="this.parentElement.innerHTML='๐“ฟ'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธชเธฃเนเธญเธขเธเธญเน€เธเธดเธเธ”เธญเธเนเธกเน</div>
+        <div class="product-cat">๐€ เน€เธเธฃเธทเนเธญเธเธเธฃเธฐเธ”เธฑเธ</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ450</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 10</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>10/20</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="50" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="accessory">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1573408301185-9519f94816c0?w=400&q=80" alt="เธเธณเนเธฅ" onerror="this.parentElement.innerHTML='๐’'"/>
+      </div>
+      <span class="product-badge off">โ” เธเธดเธ”เธเธฒเธข</span>
+      <div class="product-body">
+        <div class="product-name">เธเธณเนเธฅเธเนเธญเธกเธทเธญเน€เธเธเธฃ</div>
+        <div class="product-cat">๐€ เน€เธเธฃเธทเนเธญเธเธเธฃเธฐเธ”เธฑเธ</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ890</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 7</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>7/15</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="47" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch"/><span class="toggle-slider"></span></label>
+          <label>เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart" disabled style="opacity:.4">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- โ๏ธ เน€เธเธฃเธทเนเธญเธเน€เธเธตเธขเธ -->
+    <div class="product-card" data-cat="stationery">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=400&q=80" alt="เธชเธกเธธเธ”" onerror="this.parentElement.innerHTML='๐““'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธชเธกเธธเธ”เนเธเนเธ•เธเนเธฒเธฃเธฑเธ</div>
+        <div class="product-cat">โ๏ธ เน€เธเธฃเธทเนเธญเธเน€เธเธตเธขเธ</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ89</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 30</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>30/50</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="60" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="stationery">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=400&q=80" alt="เธเธฒเธเธเธฒ" onerror="this.parentElement.innerHTML='๐–๏ธ'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธเธฒเธเธเธฒเธชเธตเธเธฒเธชเน€เธ—เธฅ Set</div>
+        <div class="product-cat">โ๏ธ เน€เธเธฃเธทเนเธญเธเน€เธเธตเธขเธ</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ145</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 18</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>18/30</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="60" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="stationery">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?w=400&q=80" alt="เธชเธ•เธดเธเน€เธเธญเธฃเน" onerror="this.parentElement.innerHTML='๐ธ'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธชเธ•เธดเธเน€เธเธญเธฃเนเธ•เธเนเธ•เนเธ</div>
+        <div class="product-cat">โ๏ธ เน€เธเธฃเธทเนเธญเธเน€เธเธตเธขเธ</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ35</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 50</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>50/80</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="63" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ๐งธ เธเธญเธเน€เธฅเนเธ -->
+    <div class="product-card" data-cat="toy">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1558618047-f4e70c5fd023?w=400&q=80" alt="เธ•เธธเนเธเธ•เธฒ" onerror="this.parentElement.innerHTML='๐งธ'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธ•เธธเนเธเธ•เธฒเธซเธกเธตเธเนเธฒเธฃเธฑเธ</div>
+        <div class="product-cat">๐งธ เธเธญเธเน€เธฅเนเธ</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ299</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 12</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>12/20</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="60" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="toy">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400&q=80" alt="เน€เธฅเนเธเน" onerror="this.parentElement.innerHTML='๐งฉ'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธเธฅเนเธญเธเธ•เนเธญเธชเธตเธชเธฑเธ</div>
+        <div class="product-cat">๐งธ เธเธญเธเน€เธฅเนเธ</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ399</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 8</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>8/15</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="53" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-cat="toy">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=400&q=80" alt="เธเธญเธเน€เธฅเนเธ" onerror="this.parentElement.innerHTML='๐ฎ'"/>
+      </div>
+      <span class="product-badge low">โ ๏ธ เนเธเธฅเนเธซเธกเธ”</span>
+      <div class="product-body">
+        <div class="product-name">เธเธญเธเน€เธฅเนเธเน€เธชเธฃเธดเธกเธเธฑเธ’เธเธฒเธเธฒเธฃ</div>
+        <div class="product-cat">๐งธ เธเธญเธเน€เธฅเนเธ</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ520</span>
+          <span style="font-size:.8rem;color:#FF9A5C">โ ๏ธ เธชเธ•เนเธญเธ: 4</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>4/25</span></div>
+          <div class="stock-bar"><div class="stock-fill low" data-pct="16" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธกเน€เธเธดเนเธกเน€เธ•เธดเธก -->
+    <div class="product-card" data-cat="drink">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&q=80" alt="เธชเธกเธนเธ—เธ•เธตเน" onerror="this.parentElement.innerHTML='๐ฅค'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธชเธกเธนเธ—เธ•เธตเนเธเธฅเนเธกเนเธฃเธงเธก</div>
+        <div class="product-cat">๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ65</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 20</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>20/35</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="57" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ๐ฐ เธเธเธกเน€เธเธดเนเธกเน€เธ•เธดเธก -->
+    <div class="product-card" data-cat="snack">
+      <div class="product-img">
+        <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=400&q=80" alt="เธงเธฒเธเน€เธเธดเธฅ" onerror="this.parentElement.innerHTML='๐ง'"/>
+      </div>
+      <span class="product-badge">๐ข เธเธฒเธขเนเธ”เน</span>
+      <div class="product-body">
+        <div class="product-name">เธงเธฒเธเน€เธเธดเธฅเธเธกเธชเธ”</div>
+        <div class="product-cat">๐ฐ เธเธเธก</div>
+        <div class="product-row">
+          <span class="product-price">เธฟ55</span>
+          <span style="font-size:.8rem;color:#9B8AA6">เธชเธ•เนเธญเธ: 15</span>
+        </div>
+        <div class="stock-bar-wrap">
+          <div class="stock-label"><span>เธชเธ•เนเธญเธเธเธเน€เธซเธฅเธทเธญ</span><span>15/25</span></div>
+          <div class="stock-bar"><div class="stock-fill" data-pct="60" style="width:0"></div></div>
+        </div>
+        <div class="switch-wrap">
+          <label class="toggle-switch"><input type="checkbox" class="sale-switch" checked/><span class="toggle-slider"></span></label>
+          <label>เน€เธเธดเธ”เธเธฒเธข</label>
+        </div>
+        <div class="product-actions">
+          <button class="icon-btn icon-btn-cart">๐’</button>
+          <button class="icon-btn icon-btn-add">โ•</button>
+          <button class="icon-btn icon-btn-del">๐—‘๏ธ</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>๐ธ ShopCute POS System โ€ข เธเธฒเธเธ—เธตเน 2: เธฃเธฐเธเธเธเธฃเธดเธซเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธเธณเธชเธฑเนเธเธเธทเนเธญเนเธฅเธฐเธเธฅเธฑเธเธชเธดเธเธเนเธฒเธซเธเนเธฒเธฃเนเธฒเธ ๐ธ</p>
+</footer>
+
+<button class="back-to-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+

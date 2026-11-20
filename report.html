@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>๐“ เธฃเธฒเธขเธเธฒเธ - ShopCute POS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/enhance.css"/>
+</head>
+<body>
+<div class="particles" id="particles"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">๐๏ธ</span>
+      <span class="logo-text">ShopCute <span class="logo-sub">POS</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">๐  เธซเธเนเธฒเธซเธฅเธฑเธ</a>
+      <a href="dashboard.html" class="nav-item">๐“ Dashboard</a>
+      <a href="inventory.html" class="nav-item">๐“ฆ เธชเธดเธเธเนเธฒ</a>
+      <a href="pos.html" class="nav-item">๐’ เธ•เธฐเธเธฃเนเธฒ</a>
+      <a href="receipt.html" class="nav-item">๐งพ เนเธเน€เธชเธฃเนเธ</a>
+      <a href="report.html" class="nav-item active">๐“ เธฃเธฒเธขเธเธฒเธ</a>
+      <a href="login.html" class="nav-item">๐”‘ เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ</a>
+    </nav>
+    <div class="topbar-right">
+      <div class="badge-wrap">
+        <span class="material-icons cart-icon">shopping_cart</span>
+        <span class="badge" id="cart-badge">0</span>
+      </div>
+      <div class="user-avatar">๐‘ฉโ€๐’ผ</div>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <h1>๐“ เธฃเธฒเธขเธเธฒเธเธชเธฃเธธเธเธขเธญเธ”เธเธฒเธข</h1>
+  <p>เธ เธฒเธเธฃเธงเธกเธขเธญเธ”เธเธฒเธขเธเธฃเธฐเธเธณเธงเธฑเธ เธชเธดเธเธเนเธฒเธเธฒเธขเธ”เธต เนเธฅเธฐเธชเธ–เธดเธ•เธดเธชเธ•เนเธญเธ</p>
+</div>
+
+<section class="report-section">
+
+  <!-- STATS ROW -->
+  <div class="stats-row" style="margin-bottom:40px">
+    <div class="stat-card sc1">
+      <div class="stat-icon">๐๏ธ</div>
+      <div class="stat-val">38</div>
+      <div class="stat-name">เธญเธญเน€เธ”เธญเธฃเนเธงเธฑเธเธเธตเน</div>
+    </div>
+    <div class="stat-card sc2">
+      <div class="stat-icon">๐’ฐ</div>
+      <div class="stat-val">เธฟ12,580</div>
+      <div class="stat-name">เธขเธญเธ”เธเธฒเธขเธฃเธงเธก</div>
+    </div>
+    <div class="stat-card sc3">
+      <div class="stat-icon">๐ท๏ธ</div>
+      <div class="stat-val">เธฟ840</div>
+      <div class="stat-name">เธชเนเธงเธเธฅเธ”เธ—เธฑเนเธเธซเธกเธ”</div>
+    </div>
+    <div class="stat-card sc4">
+      <div class="stat-icon">๐“ฆ</div>
+      <div class="stat-val">3</div>
+      <div class="stat-name">เธชเธดเธเธเนเธฒเนเธเธฅเนเธซเธกเธ”</div>
+    </div>
+  </div>
+
+  <!-- REPORT CARDS -->
+  <div class="report-grid">
+
+    <!-- เธขเธญเธ”เธเธฒเธขเธ•เธฒเธกเธซเธกเธงเธ” -->
+    <div class="report-card">
+      <div class="report-card-head rh1">๐“ เธขเธญเธ”เธเธฒเธขเธ•เธฒเธกเธซเธกเธงเธ”เธชเธดเธเธเนเธฒ</div>
+      <div class="report-body">
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label">๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="82" style="width:0"></div></div>
+            <div class="bar-val">เธฟ4,320</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">๐ฐ เธเธเธก</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="65" style="width:0;background:linear-gradient(90deg,var(--purple),var(--blue))"></div></div>
+            <div class="bar-val">เธฟ3,460</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">๐’ เธเธงเธฒเธกเธเธฒเธก</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="50" style="width:0;background:linear-gradient(90deg,var(--mint),#3BB898)"></div></div>
+            <div class="bar-val">เธฟ2,650</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">๐ฅ— เธญเธฒเธซเธฒเธฃเธชเธ”</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="40" style="width:0;background:linear-gradient(90deg,var(--yellow),var(--orange))"></div></div>
+            <div class="bar-val">เธฟ1,480</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">๐€ เน€เธเธฃเธทเนเธญเธเธเธฃเธฐเธ”เธฑเธ</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="13" style="width:0;background:linear-gradient(90deg,#FF9A5C,#FFD166)"></div></div>
+            <div class="bar-val">เธฟ670</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- เธชเธดเธเธเนเธฒเธเธฒเธขเธ”เธต -->
+    <div class="report-card">
+      <div class="report-card-head rh2">๐ เธชเธดเธเธเนเธฒเธเธฒเธขเธ”เธต TOP 5</div>
+      <div class="report-body">
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:6px 0;font-size:.8rem;color:var(--text-soft);border-bottom:1px solid var(--pink-light)">#</th>
+              <th style="text-align:left;padding:6px 0;font-size:.8rem;color:var(--text-soft);border-bottom:1px solid var(--pink-light)">เธชเธดเธเธเนเธฒ</th>
+              <th style="text-align:right;padding:6px 0;font-size:.8rem;color:var(--text-soft);border-bottom:1px solid var(--pink-light)">เธเธฒเธข</th>
+              <th style="text-align:right;padding:6px 0;font-size:.8rem;color:var(--text-soft);border-bottom:1px solid var(--pink-light)">เธขเธญเธ”</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:8px 0">๐ฅ</td><td style="padding:8px 0;font-size:.9rem">เธเธฒเนเธ—เธขเน€เธขเนเธ</td><td style="text-align:right;font-size:.9rem">42</td><td style="text-align:right;font-size:.9rem;color:var(--pink);font-weight:600">เธฟ1,470</td></tr>
+            <tr><td style="padding:8px 0">๐ฅ</td><td style="padding:8px 0;font-size:.9rem">เธเธฒเนเธเธฅเธฒเน€เธ•เนเน€เธขเนเธ</td><td style="text-align:right;font-size:.9rem">35</td><td style="text-align:right;font-size:.9rem;color:var(--pink);font-weight:600">เธฟ1,575</td></tr>
+            <tr><td style="padding:8px 0">๐ฅ</td><td style="padding:8px 0;font-size:.9rem">เน€เธเนเธเธชเธ•เธฃเธญเธงเนเน€เธเธญเธฃเนเธฃเธต</td><td style="text-align:right;font-size:.9rem">18</td><td style="text-align:right;font-size:.9rem;color:var(--pink);font-weight:600">เธฟ2,160</td></tr>
+            <tr><td style="padding:8px 0">4๏ธโฃ</td><td style="padding:8px 0;font-size:.9rem">เธกเธฑเธ—เธเธฐเธฅเธฒเน€เธ•เน</td><td style="text-align:right;font-size:.9rem">15</td><td style="text-align:right;font-size:.9rem;color:var(--pink);font-weight:600">เธฟ825</td></tr>
+            <tr><td style="padding:8px 0">5๏ธโฃ</td><td style="padding:8px 0;font-size:.9rem">เธกเธฒเธเธฒเธฃเธญเธเธซเธฅเธฒเธเธชเธต</td><td style="text-align:right;font-size:.9rem">12</td><td style="text-align:right;font-size:.9rem;color:var(--pink);font-weight:600">เธฟ1,020</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- เธชเธ–เธดเธ•เธดเธชเธ•เนเธญเธ -->
+    <div class="report-card">
+      <div class="report-card-head rh3">๐“ฆ เธชเธ–เธฒเธเธฐเธชเธ•เนเธญเธเธชเธดเธเธเนเธฒ (LinearProgress)</div>
+      <div class="report-body">
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label">เธเธฒเนเธ—เธขเน€เธขเนเธ</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="48" style="width:0;background:linear-gradient(90deg,var(--mint),#3BB898)"></div></div>
+            <div class="bar-val">24/50</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">เธเธฒเนเธเธฅเธฒเน€เธ•เน</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="45" style="width:0;background:linear-gradient(90deg,var(--mint),#3BB898)"></div></div>
+            <div class="bar-val">18/40</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label" style="color:var(--orange)">เธกเธฑเธ—เธเธฐเธฅเธฒเน€เธ•เน</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="10" style="width:0;background:linear-gradient(90deg,var(--orange),#FF6B2B)"></div></div>
+            <div class="bar-val" style="color:var(--orange)">3/30 โ ๏ธ</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">เน€เธเนเธเธชเธ•เธฃเธญเธงเนเน€เธเธญเธฃเนเธฃเธต</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="40" style="width:0;background:linear-gradient(90deg,var(--mint),#3BB898)"></div></div>
+            <div class="bar-val">8/20</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label" style="color:var(--orange)">เธเธธเธเธเธตเนเธเนเธญเธ</div>
+            <div class="bar-track"><div class="bar-fill" data-pct="8" style="width:0;background:linear-gradient(90deg,var(--orange),#FF6B2B)"></div></div>
+            <div class="bar-val" style="color:var(--orange)">4/50 โ ๏ธ</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- เธ•เธฒเธฃเธฒเธเธฃเธฒเธขเธเธฒเธฃเธเธฒเธข -->
+    <div class="report-card" style="grid-column:1/-1">
+      <div class="report-card-head rh1">๐“ เธฃเธฒเธขเธเธฒเธฃเธเธฒเธขเธฅเนเธฒเธชเธธเธ” (Table)</div>
+      <div class="report-body" style="padding:0;overflow:hidden">
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>เน€เธฅเธเธ—เธตเนเนเธเน€เธชเธฃเนเธ</th>
+                <th>เน€เธงเธฅเธฒ</th>
+                <th>เธฃเธฒเธขเธเธฒเธฃเธชเธดเธเธเนเธฒ</th>
+                <th>เธชเนเธงเธเธฅเธ”</th>
+                <th>VAT</th>
+                <th>เธขเธญเธ”เธชเธธเธ—เธเธด</th>
+                <th>เธชเธ–เธฒเธเธฐ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>RC-57291</td><td>09:12</td>
+                <td>เธเธฒเนเธ—เธขเน€เธขเนเธ x2, เธเธธเธเธเธตเน x3</td>
+                <td style="color:var(--mint)">-เธฟ15</td>
+                <td>เธฟ11.55</td>
+                <td style="color:var(--pink);font-weight:600">เธฟ166.55</td>
+                <td><span style="background:var(--mint-light);color:#2E9E82;padding:3px 10px;border-radius:50px;font-size:.8rem">โ… เธเธณเธฃเธฐเนเธฅเนเธง</span></td>
+              </tr>
+              <tr>
+                <td>RC-57292</td><td>09:35</td>
+                <td>เธเธฒเนเธเธฅเธฒเน€เธ•เนเน€เธขเนเธ x1, เน€เธเนเธเธชเธ•เธฃเธญเธงเนเน€เธเธญเธฃเนเธฃเธต x1</td>
+                <td style="color:var(--mint)">-เธฟ0</td>
+                <td>เธฟ11.55</td>
+                <td style="color:var(--pink);font-weight:600">เธฟ176.55</td>
+                <td><span style="background:var(--mint-light);color:#2E9E82;padding:3px 10px;border-radius:50px;font-size:.8rem">โ… เธเธณเธฃเธฐเนเธฅเนเธง</span></td>
+              </tr>
+              <tr>
+                <td>RC-57293</td><td>10:08</td>
+                <td>เธกเธฑเธ—เธเธฐเธฅเธฒเน€เธ•เน x2, เธกเธฒเธเธฒเธฃเธญเธ x1</td>
+                <td style="color:var(--mint)">-เธฟ19</td>
+                <td>เธฟ11.27</td>
+                <td style="color:var(--pink);font-weight:600">เธฟ172.27</td>
+                <td><span style="background:var(--mint-light);color:#2E9E82;padding:3px 10px;border-radius:50px;font-size:.8rem">โ… เธเธณเธฃเธฐเนเธฅเนเธง</span></td>
+              </tr>
+              <tr>
+                <td>RC-57294</td><td>10:52</td>
+                <td>เธเธฃเธตเธกเธเธณเธฃเธธเธเธเธดเธงเธซเธเนเธฒ x1</td>
+                <td style="color:var(--mint)">-เธฟ70</td>
+                <td>เธฟ19.95</td>
+                <td style="color:var(--pink);font-weight:600">เธฟ299.95</td>
+                <td><span style="background:var(--mint-light);color:#2E9E82;padding:3px 10px;border-radius:50px;font-size:.8rem">โ… เธเธณเธฃเธฐเนเธฅเนเธง</span></td>
+              </tr>
+              <tr>
+                <td>RC-57295</td><td>11:30</td>
+                <td>เธชเธฅเธฑเธ”เธเธฑเธเธชเธ” x2, เธเนเธณเธชเนเธกเธเธฑเนเธเธชเธ” x2</td>
+                <td style="color:var(--mint)">-เธฟ0</td>
+                <td>เธฟ14.70</td>
+                <td style="color:var(--pink);font-weight:600">เธฟ224.70</td>
+                <td><span style="background:var(--yellow-light);color:#C67D00;padding:3px 10px;border-radius:50px;font-size:.8rem">โณ เธฃเธญเธขเธทเธเธขเธฑเธ</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>๐ธ ShopCute POS System โ€ข เธเธฒเธเธ—เธตเน 2: เธฃเธฐเธเธเธเธฃเธดเธซเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธเธณเธชเธฑเนเธเธเธทเนเธญเนเธฅเธฐเธเธฅเธฑเธเธชเธดเธเธเนเธฒเธซเธเนเธฒเธฃเนเธฒเธ ๐ธ</p>
+</footer>
+
+<button class="back-to-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', ()=>{
+  // Animate bars after load
+  setTimeout(()=>{
+    document.querySelectorAll('.bar-fill').forEach(bar=>{
+      const pct = bar.dataset.pct || '0';
+      bar.style.width = pct + '%';
+    });
+  }, 300);
+});
+</script>
+</body>
+</html>
+
+

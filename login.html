@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>๐ธ เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ - ShopCute POS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --pink:#FF6B9D;--pink-light:#FFD6E8;--pink-soft:#FFF0F7;
+      --purple:#B87FD6;--purple-light:#EDD9FF;
+      --mint:#5ECFB1;--yellow:#FFD166;--orange:#FF9A5C;
+      --text-dark:#3D2C4E;--text-soft:#9B8AA6;
+      --white:#FFFFFF;--bg:#FDF6FF;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:'Sarabun',sans-serif;
+      background:var(--bg); min-height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden; position:relative;
+    }
+
+    /* BG gradient animated */
+    .bg-anim{
+      position:fixed; inset:0; z-index:0;
+      background: linear-gradient(135deg,#FFE0F0,#F0E0FF,#E0F5FF,#E0FFF5);
+      background-size:400% 400%;
+      animation: gradShift 8s ease infinite;
+    }
+    @keyframes gradShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    /* Floating emojis */
+    .floaters{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
+    .floater{
+      position:absolute; font-size:2rem;
+      animation:floatUp2 linear infinite;
+      opacity:.35;
+    }
+    @keyframes floatUp2{
+      0%{transform:translateY(110vh) rotate(0deg);opacity:0;}
+      10%{opacity:.35;}
+      90%{opacity:.25;}
+      100%{transform:translateY(-10vh) rotate(360deg);opacity:0;}
+    }
+
+    /* LOGIN CARD */
+    .login-wrap{
+      position:relative;z-index:10;
+      width:100%;max-width:420px;padding:20px;
+    }
+    .login-card{
+      background:rgba(255,255,255,.85);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+      border-radius:28px;
+      box-shadow:0 20px 60px rgba(184,127,214,.25),0 0 0 1px rgba(255,107,157,.1);
+      padding:44px 40px 36px;
+      animation:slideUp .6s cubic-bezier(.4,0,.2,1) both;
+    }
+    @keyframes slideUp{
+      from{transform:translateY(40px);opacity:0;}
+      to{transform:translateY(0);opacity:1;}
+    }
+
+    .login-logo{text-align:center;margin-bottom:28px;}
+    .login-logo-icon{
+      font-size:4rem;
+      display:block;
+      animation:logoBounce 2s ease-in-out infinite;
+    }
+    @keyframes logoBounce{
+      0%,100%{transform:translateY(0) scale(1);}
+      50%{transform:translateY(-8px) scale(1.05);}
+    }
+    .login-logo-text{
+      font-family:'Mitr',sans-serif;font-size:1.8rem;font-weight:600;
+      background:linear-gradient(135deg,var(--pink),var(--purple));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      margin-top:8px;
+    }
+    .login-logo-sub{color:var(--text-soft);font-size:.9rem;margin-top:2px;}
+
+    .form-group{margin-bottom:18px;}
+    .form-label{
+      display:block;font-size:.85rem;font-weight:600;
+      color:var(--text-dark);margin-bottom:7px;
+    }
+    .form-input{
+      width:100%;padding:13px 18px;border-radius:14px;
+      border:2px solid var(--pink-light);outline:none;
+      font-family:'Sarabun',sans-serif;font-size:.95rem;
+      background:var(--pink-soft);color:var(--text-dark);
+      transition:.3s;
+    }
+    .form-input:focus{
+      border-color:var(--pink);background:white;
+      box-shadow:0 0 0 4px rgba(255,107,157,.12);
+    }
+    .input-icon-wrap{position:relative;}
+    .input-icon{
+      position:absolute;right:14px;top:50%;transform:translateY(-50%);
+      font-size:1.2rem;cursor:pointer;color:var(--text-soft);
+    }
+
+    .role-tabs{
+      display:flex;gap:8px;margin-bottom:20px;
+      background:var(--pink-soft);border-radius:14px;padding:5px;
+    }
+    .role-tab{
+      flex:1;padding:9px;border-radius:10px;border:none;cursor:pointer;
+      font-family:'Sarabun',sans-serif;font-size:.88rem;font-weight:600;
+      color:var(--text-soft);background:transparent;transition:.3s;
+    }
+    .role-tab.active{
+      background:white;color:var(--pink);
+      box-shadow:0 2px 8px rgba(255,107,157,.2);
+    }
+
+    .btn-login{
+      width:100%;padding:14px;border-radius:14px;border:none;cursor:pointer;
+      font-family:'Mitr',sans-serif;font-size:1.05rem;font-weight:500;
+      background:linear-gradient(135deg,var(--pink),var(--purple));
+      color:white;transition:.3s;
+      box-shadow:0 6px 20px rgba(255,107,157,.4);
+      margin-top:4px;
+    }
+    .btn-login:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,107,157,.5);}
+    .btn-login:active{transform:translateY(0);}
+
+    .login-hint{
+      text-align:center;margin-top:18px;
+      font-size:.82rem;color:var(--text-soft);
+      background:var(--purple-light);border-radius:10px;padding:10px;
+    }
+    .login-hint strong{color:var(--purple);}
+
+    .error-msg{
+      background:#FFE0E0;border:1px solid #FFB3B3;color:#C0392B;
+      border-radius:10px;padding:10px 14px;font-size:.85rem;
+      margin-top:12px;display:none;
+    }
+    .loading-dots span{
+      display:inline-block;width:8px;height:8px;border-radius:50%;
+      background:white;margin:0 3px;
+      animation:dotBounce .8s ease-in-out infinite;
+    }
+    .loading-dots span:nth-child(2){animation-delay:.15s;}
+    .loading-dots span:nth-child(3){animation-delay:.3s;}
+    @keyframes dotBounce{
+      0%,80%,100%{transform:scale(0.8);}
+      40%{transform:scale(1.2);}
+    }
+
+    /* success overlay */
+    .success-overlay{
+      position:fixed;inset:0;z-index:999;
+      background:linear-gradient(135deg,var(--pink),var(--purple));
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      opacity:0;pointer-events:none;transition:.5s;
+      color:white;font-family:'Mitr',sans-serif;
+    }
+    .success-overlay.show{opacity:1;pointer-events:all;}
+    .success-overlay .s-icon{font-size:5rem;animation:logoBounce 1s ease-in-out infinite;}
+    .success-overlay h2{font-size:1.6rem;margin-top:16px;}
+    .success-overlay p{opacity:.85;margin-top:6px;}
+  </style>
+</head>
+<body>
+<div class="bg-anim"></div>
+<div class="floaters" id="floaters"></div>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="success-overlay">
+  <div class="s-icon">๐</div>
+  <h2>เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธเธชเธณเน€เธฃเนเธ!</h2>
+  <p>เธเธณเธฅเธฑเธเน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ...</p>
+</div>
+
+<div class="login-wrap">
+  <div class="login-card">
+
+    <div class="login-logo">
+      <span class="login-logo-icon">๐๏ธ</span>
+      <div class="login-logo-text">ShopCute POS</div>
+      <div class="login-logo-sub">เธฃเธฐเธเธเธเธฃเธดเธซเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธซเธเนเธฒเธฃเนเธฒเธ</div>
+    </div>
+
+    <!-- Role Tabs -->
+    <div class="role-tabs">
+      <button class="role-tab active" data-role="admin" onclick="setRole(this)">๐‘‘ เธเธนเนเธเธฑเธ”เธเธฒเธฃ</button>
+      <button class="role-tab" data-role="cashier" onclick="setRole(this)">๐’โ€โ€๏ธ เนเธเธเน€เธเธตเธขเธฃเน</button>
+      <button class="role-tab" data-role="stock" onclick="setRole(this)">๐“ฆ เธชเธ•เนเธญเธ</button>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">๐‘ค เธเธทเนเธญเธเธนเนเนเธเน</label>
+      <div class="input-icon-wrap">
+        <input type="text" id="username" class="form-input" placeholder="เนเธชเนเธเธทเนเธญเธเธนเนเนเธเน..." value="admin"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">๐”’ เธฃเธซเธฑเธชเธเนเธฒเธ</label>
+      <div class="input-icon-wrap">
+        <input type="password" id="password" class="form-input" placeholder="เนเธชเนเธฃเธซเธฑเธชเธเนเธฒเธ..." value="1234"/>
+        <span class="input-icon" onclick="togglePwd()" id="pwd-eye">๐‘๏ธ</span>
+      </div>
+    </div>
+
+    <button class="btn-login" id="login-btn" onclick="doLogin()">
+      <span id="login-text">๐ธ เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ</span>
+    </button>
+
+    <div class="error-msg" id="error-msg">โ เธเธทเนเธญเธเธนเนเนเธเนเธซเธฃเธทเธญเธฃเธซเธฑเธชเธเนเธฒเธเนเธกเนเธ–เธนเธเธ•เนเธญเธ</div>
+
+    <div class="login-hint">
+      <strong>เธ—เธ”เธชเธญเธ:</strong> เธเธนเนเธเธฑเธ”เธเธฒเธฃ: admin / 1234 &nbsp;|&nbsp; เนเธเธเน€เธเธตเธขเธฃเน: cashier / 1234
+    </div>
+  </div>
+</div>
+
+<script>
+// Floating emojis
+const emojis = ['๐ธ','๐€','๐’','โญ','๐ง','๐ฐ','โจ','๐’•','๐ท','๐','๐’ซ','๐'];
+const fl = document.getElementById('floaters');
+for(let i=0;i<16;i++){
+  const e = document.createElement('div');
+  e.className='floater';
+  e.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+  e.style.cssText=`left:${Math.random()*100}%;animation-duration:${Math.random()*15+8}s;animation-delay:${Math.random()*8}s;font-size:${Math.random()*1.5+1}rem;`;
+  fl.appendChild(e);
+}
+
+let currentRole='admin';
+function setRole(el){
+  document.querySelectorAll('.role-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  currentRole = el.dataset.role;
+}
+
+function togglePwd(){
+  const inp = document.getElementById('password');
+  const eye = document.getElementById('pwd-eye');
+  if(inp.type==='password'){inp.type='text';eye.textContent='๐';}
+  else{inp.type='password';eye.textContent='๐‘๏ธ';}
+}
+
+const USERS = {
+  admin:   {pw:'1234', page:'dashboard.html'},
+  cashier: {pw:'1234', page:'pos.html'},
+  stock:   {pw:'1234', page:'inventory.html'},
+};
+
+function doLogin(){
+  const u = document.getElementById('username').value.trim();
+  const p = document.getElementById('password').value;
+  const err = document.getElementById('error-msg');
+  const btn = document.getElementById('login-btn');
+  const lt  = document.getElementById('login-text');
+
+  err.style.display='none';
+
+  // Loading
+  lt.innerHTML = '<span class="loading-dots"><span></span><span></span><span></span></span>';
+  btn.disabled = true;
+
+  setTimeout(()=>{
+    const matched = USERS[u] && USERS[u].pw===p;
+    if(matched){
+      localStorage.setItem('posUser', u);
+      localStorage.setItem('posRole', currentRole);
+      document.getElementById('success-overlay').classList.add('show');
+      setTimeout(()=>{ window.location.href = USERS[u]?.page || 'dashboard.html'; },1200);
+    } else {
+      lt.innerHTML='๐ธ เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ';
+      btn.disabled=false;
+      err.style.display='block';
+    }
+  },1000);
+}
+
+// Enter key
+document.addEventListener('keydown',e=>{ if(e.key==='Enter') doLogin(); });
+</script>
+</body>
+</html>
+

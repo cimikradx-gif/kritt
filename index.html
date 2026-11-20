@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>๐๏ธ ShopCute POS - เธฃเธฐเธเธเธเธฑเธ”เธเธฒเธฃเธฃเนเธฒเธเธเนเธฒ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/enhance.css"/>
+</head>
+<body>
+
+<!-- โจ Floating particles -->
+<div class="particles" id="particles"></div>
+
+<!-- ๐€ TOP NAVBAR -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="logo">
+      <span class="logo-icon">๐๏ธ</span>
+      <span class="logo-text">ShopCute <span class="logo-sub">POS</span></span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item active">๐  เธซเธเนเธฒเธซเธฅเธฑเธ</a>
+      <a href="dashboard.html" class="nav-item">๐“ Dashboard</a>
+      <a href="inventory.html" class="nav-item">๐“ฆ เธชเธดเธเธเนเธฒ</a>
+      <a href="pos.html" class="nav-item">๐’ เธ•เธฐเธเธฃเนเธฒ</a>
+      <a href="receipt.html" class="nav-item">๐งพ เนเธเน€เธชเธฃเนเธ</a>
+      <a href="report.html" class="nav-item">๐“ เธฃเธฒเธขเธเธฒเธ</a>
+      <a href="login.html" class="nav-item">๐”‘ เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ</a>
+    </nav>
+    <div class="topbar-right">
+      <div class="badge-wrap">
+        <span class="material-icons cart-icon">shopping_cart</span>
+        <span class="badge" id="cart-badge">0</span>
+      </div>
+      <div class="user-avatar">๐‘ฉโ€๐’ผ</div>
+    </div>
+  </div>
+</header>
+
+<!-- ๐ธ HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">โจ เธฃเธฐเธเธเธเธฃเธดเธซเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธซเธเนเธฒเธฃเนเธฒเธ</div>
+    <h1 class="hero-title">เธเธฒเธเธ—เธตเน 2: เธฃเธฐเธเธเธเธฃเธดเธซเธฒเธฃเธเธฑเธ”เธเธฒเธฃ<br/><span class="highlight">เธเธณเธชเธฑเนเธเธเธทเนเธญเนเธฅเธฐเธเธฅเธฑเธเธชเธดเธเธเนเธฒ</span></h1>
+    <p class="hero-sub">Point of Sale and Inventory Management System<br/>เธชเธฐเธ”เธงเธ โ€ข เธฃเธงเธ”เน€เธฃเนเธง โ€ข เนเธกเนเธเธขเธณ</p>
+    <div class="hero-btns">
+      <a href="pos.html" class="btn btn-primary">๐’ เน€เธฃเธดเนเธกเธเธฒเธขเธชเธดเธเธเนเธฒ</a>
+      <a href="inventory.html" class="btn btn-outline">๐“ฆ เธ”เธนเธชเธดเธเธเนเธฒเธ—เธฑเนเธเธซเธกเธ”</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-float">
+      <div class="stat-bubble bubble1">
+        <span class="stat-num">245</span>
+        <span class="stat-label">เธชเธดเธเธเนเธฒเธ—เธฑเนเธเธซเธกเธ”</span>
+      </div>
+      <div class="stat-bubble bubble2">
+        <span class="stat-num">เธฟ12,580</span>
+        <span class="stat-label">เธขเธญเธ”เธงเธฑเธเธเธตเน</span>
+      </div>
+      <div class="stat-bubble bubble3">
+        <span class="stat-num">38</span>
+        <span class="stat-label">เธญเธญเน€เธ”เธญเธฃเน</span>
+      </div>
+    </div>
+    <div class="hero-emoji-cloud">
+      <span class="e1">๐ง</span><span class="e2">๐ฐ</span><span class="e3">๐€</span>
+      <span class="e4">๐ธ</span><span class="e5">๐’</span><span class="e6">โญ</span>
+    </div>
+  </div>
+</section>
+
+<!-- ๐“ FEATURE CARDS -->
+<section class="features">
+  <h2 class="section-title">๐ เธเธตเน€เธเธญเธฃเนเธซเธฅเธฑเธเธเธญเธเธฃเธฐเธเธ</h2>
+  <div class="feature-grid">
+
+    <div class="feature-card fc1">
+      <div class="fc-icon">๐“ฆ</div>
+      <h3>Inventory Control</h3>
+      <p>เธเธฑเธ”เธเธฒเธฃเธฃเธฒเธขเธเธฒเธฃเธชเธดเธเธเนเธฒเนเธฅเธฐเธชเธ•เนเธญเธ เธเธฃเนเธญเธกเนเธเนเธเน€เธ•เธทเธญเธเน€เธกเธทเนเธญเธชเธดเธเธเนเธฒเนเธเธฅเนเธซเธกเธ” (เธเนเธญเธขเธเธงเนเธฒ 5 เธเธดเนเธ)</p>
+      <a href="inventory.html" class="fc-link">เธ”เธนเธชเธดเธเธเนเธฒ โ’</a>
+    </div>
+
+    <div class="feature-card fc2">
+      <div class="fc-icon">๐งฎ</div>
+      <h3>Transaction Calculation</h3>
+      <p>เธเธณเธเธงเธ“เธฃเธฒเธเธฒ VAT 7% เธชเนเธงเธเธฅเธ” Discount Code เนเธฅเธฐเน€เธเธดเธเธ—เธญเธ เธญเธฑเธ•เนเธเธกเธฑเธ•เธด</p>
+      <a href="pos.html" class="fc-link">เนเธเธ—เธตเนเธ•เธฐเธเธฃเนเธฒ โ’</a>
+    </div>
+
+    <div class="feature-card fc3">
+      <div class="fc-icon">๐”</div>
+      <h3>Status Control</h3>
+      <p>เน€เธเธดเธ”-เธเธดเธ”เธเธฒเธฃเธเธณเธซเธเนเธฒเธขเธชเธดเธเธเนเธฒเนเธ•เนเธฅเธฐเธฃเธฒเธขเธเธฒเธฃเนเธ”เนเธ—เธฑเธเธ—เธต เธ”เนเธงเธข Switch toggle</p>
+      <a href="inventory.html" class="fc-link">เธเธฑเธ”เธเธฒเธฃเธชเธ–เธฒเธเธฐ โ’</a>
+    </div>
+
+    <div class="feature-card fc4">
+      <div class="fc-icon">๐งพ</div>
+      <h3>Receipt & Report</h3>
+      <p>เนเธชเธ”เธเนเธเน€เธชเธฃเนเธเธฃเธฑเธเน€เธเธดเธเธขเนเธญ เนเธฅเธฐเธฃเธฒเธขเธเธฒเธเธชเธฃเธธเธเธขเธญเธ”เธเธฒเธขเธเธฃเธฐเธเธณเธงเธฑเธ</p>
+      <a href="receipt.html" class="fc-link">เธ”เธนเนเธเน€เธชเธฃเนเธ โ’</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ๐งฉ MUI COMPONENTS SECTION -->
+<section class="components-section">
+  <h2 class="section-title">๐งฉ MUI Components เธ—เธตเนเนเธเนเนเธเธฃเธฐเธเธ</h2>
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="comp-header nav-header">๐—บ๏ธ Navigation & Header</div>
+      <div class="comp-body">
+        <span class="chip">AppBar</span>
+        <span class="chip">Toolbar</span>
+        <span class="chip chip-pink">Badge ๐’</span>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-header data-header">๐“ Data Presentation</div>
+      <div class="comp-body">
+        <span class="chip">Card</span>
+        <span class="chip">CardMedia</span>
+        <span class="chip">CardContent</span>
+        <span class="chip chip-pink">CardActions</span>
+        <span class="chip">Table</span>
+        <span class="chip">TableHead</span>
+        <span class="chip">TableRow</span>
+        <span class="chip chip-green">TableCell</span>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-header input-header">๐๏ธ Inputs & Controls</div>
+      <div class="comp-body">
+        <span class="chip chip-purple">Switch</span>
+        <span class="chip">TextField</span>
+        <span class="chip chip-pink">IconButton</span>
+      </div>
+    </div>
+    <div class="comp-card">
+      <div class="comp-header feedback-header">๐’ฌ Feedback</div>
+      <div class="comp-body">
+        <span class="chip chip-green">Snackbar</span>
+        <span class="chip chip-purple">LinearProgress</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ๐ธ QUICK STATS -->
+<section class="stats-section">
+  <h2 class="section-title">๐“ เธชเธ–เธดเธ•เธดเธงเธฑเธเธเธตเน</h2>
+  <div class="stats-row">
+    <div class="stat-card sc1">
+      <div class="stat-icon">๐๏ธ</div>
+      <div class="stat-val">38</div>
+      <div class="stat-name">เธญเธญเน€เธ”เธญเธฃเนเธงเธฑเธเธเธตเน</div>
+    </div>
+    <div class="stat-card sc2">
+      <div class="stat-icon">๐’ฐ</div>
+      <div class="stat-val">เธฟ12,580</div>
+      <div class="stat-name">เธขเธญเธ”เธเธฒเธขเธฃเธงเธก</div>
+    </div>
+    <div class="stat-card sc3">
+      <div class="stat-icon">๐“ฆ</div>
+      <div class="stat-val">245</div>
+      <div class="stat-name">เธชเธดเธเธเนเธฒเนเธเธชเธ•เนเธญเธ</div>
+    </div>
+    <div class="stat-card sc4">
+      <div class="stat-icon">โ ๏ธ</div>
+      <div class="stat-val">3</div>
+      <div class="stat-name">เธชเธดเธเธเนเธฒเนเธเธฅเนเธซเธกเธ”</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>๐ธ ShopCute POS System โ€ข เธเธฒเธเธ—เธตเน 2: เธฃเธฐเธเธเธเธฃเธดเธซเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธเธณเธชเธฑเนเธเธเธทเนเธญเนเธฅเธฐเธเธฅเธฑเธเธชเธดเธเธเนเธฒเธซเธเนเธฒเธฃเนเธฒเธ ๐ธ</p>
+  <p style="margin-top:4px;opacity:.7;font-size:.85rem;">Point of Sale and Inventory Management System</p>
+</footer>
+
+<button class="back-to-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+

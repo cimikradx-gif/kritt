@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>๐’ เธ•เธฐเธเธฃเนเธฒเธชเธดเธเธเนเธฒ - ShopCute POS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/enhance.css"/>
+  <style>
+    .pos-products-mini { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:14px; }
+    .mini-card {
+      background:white; border-radius:14px; box-shadow:0 4px 16px rgba(184,127,214,.15);
+      overflow:hidden; cursor:pointer; transition:.3s; border:2px solid transparent;
+    }
+    .mini-card:hover { border-color:var(--pink); transform:translateY(-3px); }
+    .mini-card.selected { border-color:var(--pink); background:var(--pink-soft); }
+    .mini-img { height:100px; display:flex;align-items:center;justify-content:center;font-size:2.5rem; overflow:hidden; }
+    .mini-img img { width:100%;height:100%;object-fit:cover; }
+    .mini-info { padding:10px 10px 12px; }
+    .mini-name { font-size:.85rem; font-weight:600; margin-bottom:2px; }
+    .mini-price { font-family:'Mitr',sans-serif; font-size:1rem; color:var(--pink); }
+  </style>
+</head>
+<body>
+<div class="particles" id="particles"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">๐๏ธ</span>
+      <span class="logo-text">ShopCute <span class="logo-sub">POS</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item">๐  เธซเธเนเธฒเธซเธฅเธฑเธ</a>
+      <a href="dashboard.html" class="nav-item">๐“ Dashboard</a>
+      <a href="inventory.html" class="nav-item">๐“ฆ เธชเธดเธเธเนเธฒ</a>
+      <a href="pos.html" class="nav-item active">๐’ เธ•เธฐเธเธฃเนเธฒ</a>
+      <a href="receipt.html" class="nav-item">๐งพ เนเธเน€เธชเธฃเนเธ</a>
+      <a href="report.html" class="nav-item">๐“ เธฃเธฒเธขเธเธฒเธ</a>
+      <a href="login.html" class="nav-item">๐”‘ เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ</a>
+    </nav>
+    <div class="topbar-right">
+      <div class="badge-wrap">
+        <span class="material-icons cart-icon">shopping_cart</span>
+        <span class="badge" id="cart-badge">0</span>
+      </div>
+      <div class="user-avatar">๐‘ฉโ€๐’ผ</div>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <h1>๐’ เธฃเธฐเธเธ Point of Sale</h1>
+  <p>เน€เธฅเธทเธญเธเธชเธดเธเธเนเธฒ เธเธณเธเธงเธ“เธฃเธฒเธเธฒ เนเธฅเธฐเธญเธญเธเนเธเน€เธชเธฃเนเธเนเธ”เนเธ—เธฑเธเธ—เธต</p>
+</div>
+
+<section class="page-section">
+  <div class="pos-layout">
+
+    <!-- LEFT: เธชเธดเธเธเนเธฒเนเธซเนเน€เธฅเธทเธญเธ -->
+    <div>
+      <h2 class="section-title" style="text-align:left;margin-bottom:20px">๐๏ธ เน€เธฅเธทเธญเธเธชเธดเธเธเนเธฒ</h2>
+
+      <div class="filter-bar" style="margin-bottom:16px">
+        <button class="filter-btn active" data-cat="all">เธ—เธฑเนเธเธซเธกเธ”</button>
+        <button class="filter-btn" data-cat="drink">๐ง เน€เธเธฃเธทเนเธญเธเธ”เธทเนเธก</button>
+        <button class="filter-btn" data-cat="snack">๐ฐ เธเธเธก</button>
+        <button class="filter-btn" data-cat="fresh">๐ฅ— เธญเธฒเธซเธฒเธฃเธชเธ”</button>
+        <button class="filter-btn" data-cat="beauty">๐’ เธเธงเธฒเธกเธเธฒเธก</button>
+      </div>
+
+      <div class="pos-products-mini" id="pos-products">
+        <!-- Drink -->
+        <div class="mini-card" data-cat="drink" data-name="เธเธฒเนเธ—เธขเน€เธขเนเธ" data-price="35" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80" alt="เธเธฒเนเธ—เธข" onerror="this.parentElement.innerHTML='๐ง'"/></div>
+          <div class="mini-info"><div class="mini-name">เธเธฒเนเธ—เธขเน€เธขเนเธ</div><div class="mini-price">เธฟ35</div></div>
+        </div>
+        <div class="mini-card" data-cat="drink" data-name="เธเธฒเนเธเธฅเธฒเน€เธ•เนเน€เธขเนเธ" data-price="45" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=200&q=80" alt="เธเธฒเนเธ" onerror="this.parentElement.innerHTML='โ•'"/></div>
+          <div class="mini-info"><div class="mini-name">เธเธฒเนเธเธฅเธฒเน€เธ•เนเน€เธขเนเธ</div><div class="mini-price">เธฟ45</div></div>
+        </div>
+        <div class="mini-card" data-cat="drink" data-name="เธกเธฑเธ—เธเธฐเธฅเธฒเน€เธ•เน" data-price="55" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1603394630026-6e9f0acfbdb5?w=200&q=80" alt="เธกเธฑเธ—เธเธฐ" onerror="this.parentElement.innerHTML='๐ต'"/></div>
+          <div class="mini-info"><div class="mini-name">เธกเธฑเธ—เธเธฐเธฅเธฒเน€เธ•เน</div><div class="mini-price">เธฟ55</div></div>
+        </div>
+        <div class="mini-card" data-cat="drink" data-name="เธเนเธณเธชเนเธกเธเธฑเนเธเธชเธ”" data-price="40" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1546548970-71785318a17b?w=200&q=80" alt="เธเนเธณเธชเนเธก" onerror="this.parentElement.innerHTML='๐น'"/></div>
+          <div class="mini-info"><div class="mini-name">เธเนเธณเธชเนเธกเธเธฑเนเธเธชเธ”</div><div class="mini-price">เธฟ40</div></div>
+        </div>
+        <!-- Snack -->
+        <div class="mini-card" data-cat="snack" data-name="เน€เธเนเธเธชเธ•เธฃเธญเธงเนเน€เธเธญเธฃเนเธฃเธต" data-price="120" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200&q=80" alt="เน€เธเนเธ" onerror="this.parentElement.innerHTML='๐'"/></div>
+          <div class="mini-info"><div class="mini-name">เน€เธเนเธเธชเธ•เธฃเธญเธงเนเน€เธเธญเธฃเนเธฃเธต</div><div class="mini-price">เธฟ120</div></div>
+        </div>
+        <div class="mini-card" data-cat="snack" data-name="เธเธธเธเธเธตเนเธเนเธญเธเนเธเนเธฅเธ•เธเธดเธ" data-price="25" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1587349144988-b6e3ae1e45e2?w=200&q=80" alt="เธเธธเธเธเธตเน" onerror="this.parentElement.innerHTML='๐ช'"/></div>
+          <div class="mini-info"><div class="mini-name">เธเธธเธเธเธตเนเธเนเธญเธเนเธเนเธฅเธ•เธเธดเธ</div><div class="mini-price">เธฟ25</div></div>
+        </div>
+        <div class="mini-card" data-cat="snack" data-name="เธกเธฒเธเธฒเธฃเธญเธเธซเธฅเธฒเธเธชเธต" data-price="85" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=200&q=80" alt="เธกเธฒเธเธฒเธฃเธญเธ" onerror="this.parentElement.innerHTML='๐ง'"/></div>
+          <div class="mini-info"><div class="mini-name">เธกเธฒเธเธฒเธฃเธญเธเธซเธฅเธฒเธเธชเธต</div><div class="mini-price">เธฟ85</div></div>
+        </div>
+        <!-- Fresh -->
+        <div class="mini-card" data-cat="fresh" data-name="เธชเธฅเธฑเธ”เธเธฑเธเธชเธ”" data-price="65" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=200&q=80" alt="เธชเธฅเธฑเธ”" onerror="this.parentElement.innerHTML='๐ฅ—'"/></div>
+          <div class="mini-info"><div class="mini-name">เธชเธฅเธฑเธ”เธเธฑเธเธชเธ”</div><div class="mini-price">เธฟ65</div></div>
+        </div>
+        <!-- Beauty -->
+        <div class="mini-card" data-cat="beauty" data-name="เธเธฃเธตเธกเธเธณเธฃเธธเธเธเธดเธงเธซเธเนเธฒ" data-price="350" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=200&q=80" alt="เธเธฃเธตเธก" onerror="this.parentElement.innerHTML='๐’'"/></div>
+          <div class="mini-info"><div class="mini-name">เธเธฃเธตเธกเธเธณเธฃเธธเธเธเธดเธงเธซเธเนเธฒ</div><div class="mini-price">เธฟ350</div></div>
+        </div>
+        <div class="mini-card" data-cat="beauty" data-name="เธฅเธดเธเธชเธ•เธดเธเธเธกเธชเธ•เธฃเธญเธงเนเน€เธเธญเธฃเนเธฃเธต" data-price="199" onclick="addToCart(this)">
+          <div class="mini-img"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=200&q=80" alt="เธฅเธดเธเธชเธ•เธดเธ" onerror="this.parentElement.innerHTML='๐’'"/></div>
+          <div class="mini-info"><div class="mini-name">เธฅเธดเธเธชเธ•เธดเธเธเธกเธชเธ•เธฃเธญเธงเนเน€เธเธญเธฃเนเธฃเธต</div><div class="mini-price">เธฟ199</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: เธ•เธฐเธเธฃเนเธฒ + เธเธณเธเธงเธ“ -->
+    <div class="cart-box">
+      <div class="cart-header">
+        ๐’ เธ•เธฐเธเธฃเนเธฒเธชเธดเธเธเนเธฒ
+        <span id="cart-count-label">0 เธฃเธฒเธขเธเธฒเธฃ</span>
+      </div>
+
+      <div class="cart-items" id="cart-items">
+        <p style="text-align:center;color:#9B8AA6;padding:24px;font-size:.9rem">๐’ เธขเธฑเธเนเธกเนเธกเธตเธชเธดเธเธเนเธฒเนเธเธ•เธฐเธเธฃเนเธฒ<br/>เธเธฅเธดเธเธชเธดเธเธเนเธฒเน€เธเธทเนเธญเน€เธเธดเนเธก</p>
+      </div>
+
+      <div class="cart-summary">
+        <!-- Discount Code -->
+        <div class="discount-row">
+          <input type="text" id="discount-code" class="discount-input" placeholder="๐ท๏ธ Discount Code..."/>
+          <button class="btn btn-pink btn-sm" onclick="applyDiscount()" style="background:var(--pink);color:white;border:none;padding:8px 16px;border-radius:50px;cursor:pointer;font-size:.85rem;font-family:'Sarabun',sans-serif;white-space:nowrap">เนเธเนเนเธเนเธ”</button>
+        </div>
+
+        <div class="summary-row"><span>เธขเธญเธ”เธฃเธงเธก</span><span id="subtotal">เธฟ0</span></div>
+        <div class="summary-row"><span>เธชเนเธงเธเธฅเธ”</span><span id="discount-amt" style="color:var(--mint)">เธฟ0</span></div>
+        <div class="summary-row"><span>VAT 7%</span><span id="vat-amt">เธฟ0</span></div>
+        <div class="summary-row total"><span>๐’ฐ เธขเธญเธ”เธชเธธเธ—เธเธด</span><span id="grand-total">เธฟ0</span></div>
+
+        <!-- เน€เธเธดเธเธ—เธตเนเธฃเธฑเธเธกเธฒ -->
+        <div class="change-box">
+          <div class="change-label">เธฃเธฑเธเน€เธเธดเธเธเธฒเธเธฅเธนเธเธเนเธฒ</div>
+          <input type="number" id="cash-input" class="change-input" placeholder="0" oninput="calcChange()"/>
+          <div class="change-result" id="change-result">เน€เธเธดเธเธ—เธญเธ: โ€”</div>
+        </div>
+
+        <button class="btn btn-primary" style="width:100%;justify-content:center;border-radius:var(--radius-sm)" onclick="checkout()">
+          ๐งพ เธญเธญเธเนเธเน€เธชเธฃเนเธ
+        </button>
+        <button class="btn btn-outline btn-sm" style="width:100%;justify-content:center;margin-top:8px;border-radius:var(--radius-sm)" onclick="clearCart()">
+          ๐—‘๏ธ เธฅเนเธฒเธเธ•เธฐเธเธฃเนเธฒ
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <p>๐ธ ShopCute POS System โ€ข เธเธฒเธเธ—เธตเน 2: เธฃเธฐเธเธเธเธฃเธดเธซเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธเธณเธชเธฑเนเธเธเธทเนเธญเนเธฅเธฐเธเธฅเธฑเธเธชเธดเธเธเนเธฒเธซเธเนเธฒเธฃเนเธฒเธ ๐ธ</p>
+</footer>
+
+<button class="back-to-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="js/main.js"></script>
+<script src="js/pos.js"></script>
+</body>
+</html>
+
+
